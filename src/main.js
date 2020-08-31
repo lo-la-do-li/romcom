@@ -3,7 +3,16 @@ var cover =  document.querySelector('.cover-image');
 var title = document.querySelector('.cover-title');
 var descriptor1 = document.querySelector('.tagline-1');
 var descriptor2 = document.querySelector('.tagline-2');
+
 var randomCoverButton = document.querySelector('.random-cover-button');
+var myoCoverButton = document.querySelector('.make-new-button')
+
+var homeButton = document.querySelector('.home-button');
+var saveCoverButton = document.querySelector('.save-cover-button')
+var viewSavedButton = document.querySelector('.view-saved-button')
+var hiddenForm = document.querySelector('.form-view')
+var homeView = document.querySelector('.home-view')
+
 
 // We've provided a few variables below
 var savedCovers = [
@@ -21,6 +30,13 @@ randomCoverButton.addEventListener("click", function(){ 
   getRandomBook();
  }); 
 
+myoCoverButton.addEventListener("click", function() {
+  hiddenForm.classList.remove('hidden')
+  homeView.classList.add('hidden')
+  saveCoverButton.classList.add('hidden')
+  randomCoverButton.classList.add('hidden')
+  homeButton.classList.remove('hidden')
+})
 
 // Create your event handlers and other functions here 👇
 function getRandomBook() {
