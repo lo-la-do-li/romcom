@@ -12,6 +12,7 @@ var saveCoverButton = document.querySelector('.save-cover-button')
 var viewSavedButton = document.querySelector('.view-saved-button')
 var hiddenForm = document.querySelector('.form-view')
 var homeView = document.querySelector('.home-view')
+var savedView = document.querySelector('.saved-view')
 
 
 // We've provided a few variables below
@@ -36,6 +37,15 @@ myoCoverButton.addEventListener("click", function() {
   saveCoverButton.classList.add('hidden')
   randomCoverButton.classList.add('hidden')
   homeButton.classList.remove('hidden')
+})
+
+viewSavedButton.addEventListener("click", function(){
+  savedView.classList.remove('hidden')
+  homeView.classList.add('hidden')
+  hiddenForm.classList.add('hidden')
+  homeButton.classList.remove('hidden')
+  saveCoverButton.classList.add('hidden')
+  randomCoverButton.classList.add('hidden')
 })
 
 // Create your event handlers and other functions here 👇
