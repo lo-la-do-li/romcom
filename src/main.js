@@ -80,6 +80,16 @@ function showCover(book) {
   descriptor2.innerText = book.tagline2
 }
 
+function addSavedCover() {
+    event.preventDefault();
+  if (!savedCovers.includes(currentCover)) {
+    savedCovers.push(currentCover)
+  };
+  // savedCoversLocation.innerHTML = savedCovers
+  // savedCoversLocation.push(savedCovers)
+  console.log(savedCovers);
+}
+
 function viewHomeView() {
   hiddenForm.classList.add('hidden');
   homeView.classList.remove('hidden');
