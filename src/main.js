@@ -16,7 +16,7 @@ var hiddenForm = document.querySelector('.form-view')
 var homeView = document.querySelector('.home-view')
 var savedView = document.querySelector('.saved-view')
 
-// We've provided a few variables below
+
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
 ];
@@ -25,24 +25,13 @@ var currentCover;
 
 // Add your event listeners here 👇
 
-window.addEventListener("load", function(){
-  getRandomBook();
-});
+window.addEventListener("load", getRandomBook)
+randomCoverButton.addEventListener("click", getRandomBook)
+viewSavedButton.addEventListener("click", viewSavedCovers)
+myoCoverButton.addEventListener("click", viewUserCoverForm)
 
-randomCoverButton.addEventListener("click", function(){ 
-  getRandomBook();
-}); 
-
-myoCoverButton.addEventListener("click", function(){
-  hiddenForm.classList.remove('hidden');
-  homeView.classList.add('hidden');
-  saveCoverButton.classList.add('hidden');
-  randomCoverButton.classList.add('hidden');
-  homeButton.classList.remove('hidden');
-})
 
 makeMyBookButton.addEventListener("click", function() {
-
   event.preventDefault();
 
   var userCover = document.getElementById('cover').value;
@@ -62,19 +51,19 @@ makeMyBookButton.addEventListener("click", function() {
   descriptor1.innerText = newBook.tagline1
   descriptor2.innerText = newBook.tagline2
 
-  hiddenForm.classList.add('hidden');
-  homeView.classList.remove('hidden');
+  viewHomeView();
 
   console.log(newBook)
 })
 
-viewSavedButton.addEventListener("click", function(){   savedView.classList.remove('hidden') 
-homeView.classList.add('hidden') 
-hiddenForm.classList.add('hidden') 
-homeButton.classList.remove('hidden')   saveCoverButton.classList.add('hidden')   randomCoverButton.classList.add('hidden') 
-})
 
 // Create your event handlers and other functions here 👇
+
+function getRandomIndex(arr) {
+  // return Math.floor(Math.random() * arr.length);
+  return arr[Math.floor(Math.random() * arr.length)]
+}
+
 function getRandomBook() {
   var randomCover = getRandomIndex(covers);
   var randomTitle = getRandomIndex(titles);
@@ -91,12 +80,23 @@ function getRandomBook() {
   console.log(currentCover);
 }
 
-// We've provided one function to get you started
-function getRandomIndex(arr) {
-  // return Math.floor(Math.random() * arr.length);
-  return arr[Math.floor(Math.random() * arr.length)]
+function viewHomeView() {
+  hiddenForm.classList.add('hidden');
+  homeView.classList.remove('hidden');
+  saveCoverButton.classList.remove('hidden')   randomCoverButton.classList.remove('hidden') 
 }
-//
-// getRandomIndex(covers)
-// getRandomIndex(descriptors)
-// getRandomIndex(titles)
+
+function viewSavedCovers() {
+  savedView.classList.remove('hidden') 
+  homeView.classList.add('hidden') 
+  hiddenForm.classList.add('hidden') 
+  homeButton.classList.remove('hidden')   saveCoverButton.classList.add('hidden')   randomCoverButton.classList.add('hidden') 
+}
+
+function viewUserCoverForm() {
+  hiddenForm.classList.remove('hidden');
+  homeView.classList.add('hidden');
+  saveCoverButton.classList.add('hidden');
+  randomCoverButton.classList.add('hidden');
+  homeButton.classList.remove('hidden')
+}
