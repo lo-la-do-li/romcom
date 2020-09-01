@@ -56,6 +56,17 @@ makeMyBookButton.addEventListener("click", function() {
   console.log(newBook)
 })
 
+// <<<<<<< myoCover-form
+// =======
+// viewSavedButton.addEventListener("click", function(){
+//   savedView.classList.remove('hidden')
+//   homeView.classList.add('hidden')
+//   hiddenForm.classList.add('hidden')
+//   homeButton.classList.remove('hidden')
+//   saveCoverButton.classList.add('hidden')
+//   randomCoverButton.classList.add('hidden')
+// })
+// >>>>>>> main
 
 // Create your event handlers and other functions here 👇
 
