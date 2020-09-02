@@ -35,7 +35,7 @@ Once within the `Make Your Own Cover` section, the user may enter a title, two d
 
 ![Safeword Sunstone](https://scontent.fapa1-1.fna.fbcdn.net/v/t1.0-9/118764548_10160266552058677_1274485151992478491_o.jpg?_nc_cat=110&_nc_sid=730e14&_nc_ohc=jF1OMYTbGB4AX8XWZnc&_nc_ht=scontent.fapa1-1.fna&oh=f26c3ac063f4c73894d71af084e0576a&oe=5F75413F)
 
-![Flavorblasted](https://scontent.fapa1-2.fna.fbcdn.net/v/t1.0-9/118761245_10160266552073677_3226062152472946161_o.jpg?_nc_cat=107&_nc_sid=730e14&_nc_ohc=0JaafvSkWY4AX8QUa91&_nc_ht=scontent.fapa1-2.fna&oh=3453067b99b10d9defd413e077a72664&oe=5F752D88)
+![Flavorblasted](https://scontent.fapa1-2.fna.fbcdn.net/v/t1.0-9/118765400_10160266604178677_2764087957196738261_o.jpg?_nc_cat=104&_nc_sid=0debeb&_nc_ohc=z7q6de5jRPIAX-jh0UN&_nc_oc=AQnmShttQ5KBr6vfa1qsHvKLPj3D2GIOzddeSEMRWofzKbvJcpMeRML8IUkrHzTkFZKc9O8A_6i28IfS1OuoYuFS&_nc_ht=scontent.fapa1-2.fna&oh=21ca6f8ac712922ab59d1aaed45db507&oe=5F767261)
 
 
 ## Save Your Covers!
