@@ -19,9 +19,9 @@ var savedCoversLocation = document.querySelector('.saved-covers-section')
 
 var currentCover = getRandomBook();
 
-var savedCovers = []
-//   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
-// ];
+var savedCovers = [
+  new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
+];
 
 
 // Add your event listeners here 👇
@@ -43,7 +43,7 @@ makeMyBookButton.addEventListener("click", function() {
   var userDesc2 = document.getElementById('descriptor2').value;
 
   var newBook = new Cover (userCover, userTitle, userDesc1, userDesc2);
-
+  savedCovers.push(newBook);
   showCover(newBook);
   pushMyCoverToArrays(newBook);
   viewHomeView();
@@ -51,7 +51,6 @@ makeMyBookButton.addEventListener("click", function() {
 // Create your event handlers and other functions here 👇
 
 function getRandomIndex(arr) {
-  // return Math.floor(Math.random() * arr.length);
   return arr[Math.floor(Math.random() * arr.length)]
 }
 
@@ -81,12 +80,11 @@ function showCover(book) {
 }
 
 function addSavedCover() {
-    event.preventDefault();
+  event.preventDefault();
   if (!savedCovers.includes(currentCover)) {
     savedCovers.push(currentCover)
   };
-  // savedCoversLocation.innerHTML = savedCovers
-  // savedCoversLocation.push(savedCovers)
+  makesMiniCoverSection();
   console.log(savedCovers);
 }
 
@@ -109,5 +107,24 @@ function viewUserCoverForm() {
   homeView.classList.add('hidden');
   saveCoverButton.classList.add('hidden');
   randomCoverButton.classList.add('hidden');
-  homeButton.classList.remove('hidden')
+  homeButton.classList.remove('hidden');
+  savedView.classList.add('hidden');
+}
+
+function makesMiniCoverSection() {
+
+  var miniCovers = ""
+  for (var i = 0; i < savedCovers.length; i++) {
+    var newSavedCover =
+    `<section class="mini-cover">
+    <img class="mini-cover" src=${savedCovers[i].cover}>
+    <h2 class="cover-title">${savedCovers[i].title}</h2>
+    <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
+    <img class="price-tag" src="./assets/price.png">
+    <img class="overlay" src="./assets/overlay.png">
+    </section>`
+
+    miniCovers += newSavedCover;
+    savedCoversLocation.innerHTML = miniCovers;
+  }
 }
