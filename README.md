@@ -25,7 +25,7 @@ you can generate a new random cover with `Show New Random Cover`, make your own 
 
 ![Your Cover Here](https://scontent.fapa1-2.fna.fbcdn.net/v/t1.0-9/118764029_10160266490683677_8875513111090355122_n.jpg?_nc_cat=104&_nc_sid=0debeb&_nc_ohc=r0tfC6r9-ncAX_fGFbw&_nc_ht=scontent.fapa1-2.fna&oh=f46a2e81f2b9a550948984d9725d6a12&oe=5F72FEC6)
 
-The user may enter a title, two descriptors and even a link to their favorite image to make it their own!
+Once within the `Make Your Own Cover` section, the user may enter a title, two descriptors and even a link to their favorite image to make it their own! Click `Make My Book` to transform what you've entered into a seductive, steamy novel *more* than worthy of your local drugstore's most middle shelf.
 
 (some personal favorites:)
 
@@ -38,12 +38,9 @@ The user may enter a title, two descriptors and even a link to their favorite im
 
 ![](https://scontent.fapa1-1.fna.fbcdn.net/v/t1.0-9/118766397_10160266490723677_4389244661271313471_o.jpg?_nc_cat=111&_nc_sid=0debeb&_nc_ohc=EsMDh5w3qVgAX8HtYFc&_nc_ht=scontent.fapa1-1.fna&oh=75ca6eceb4a13c8b6d250b44260d5369&oe=5F750C57)
 
+If you find you've become attached to your new novel you may opt to save your cover! Click `Save Cover` and you'll find it stored in your own personal library (amongst other unique gems) within the `View Saved Covers` section. Your new favorite novels will live here, as mini-versions of themselves!
 
-## Progression
 
-For a description of iterations, visit [the project page](https://frontend.turing.io/projects/module-1/romcom-pair.html) on the curriculum site.
-
-![Test Image](https://files.slack.com/files-pri/T029P2S9M-F01A3NE6QE8/image.png)
 
 
 
