@@ -1,4 +1,3 @@
-// Create variables targetting the relevant DOM elements here 👇
 
 var cover =  document.querySelector('.cover-image');
 var title = document.querySelector('.cover-title');
@@ -19,12 +18,10 @@ var savedCoversLocation = document.querySelector('.saved-covers-section')
 
 var currentCover = getRandomBook();
 
-var savedCovers = [
-  new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
-];
+var savedCovers = [];
 
 
-// Add your event listeners here 👇
+
 
 window.addEventListener("load", getRandomBook)
 randomCoverButton.addEventListener("click", getRandomBook)
@@ -32,42 +29,27 @@ viewSavedButton.addEventListener("click", viewSavedCovers)
 myoCoverButton.addEventListener("click", viewUserCoverForm)
 saveCoverButton.addEventListener("click", addSavedCover)
 homeButton.addEventListener("click", viewHomeView)
+makeMyBookButton.addEventListener("click", makeNewBook)
+savedCoversLocation.addEventListener('dblclick', deleteSaved)
 
 
-makeMyBookButton.addEventListener("click", function() {
+
+
+function getRandomIndex(arr) {
+  return arr[Math.floor(Math.random() * arr.length)]
+}
+
+function makeNewBook() {
   event.preventDefault();
-
   var userCover = document.getElementById('cover').value;
   var userTitle = document.getElementById('title').value;
   var userDesc1 = document.getElementById('descriptor1').value;
   var userDesc2 = document.getElementById('descriptor2').value;
-
   var newBook = new Cover (userCover, userTitle, userDesc1, userDesc2);
   savedCovers.push(newBook);
   showCover(newBook);
   pushMyCoverToArrays(newBook);
   viewHomeView();
-})
-//<<<<<<< save-covers-to-savedView
-//=======
-
-// <<<<<<< myoCover-form
-// =======
-// viewSavedButton.addEventListener("click", function(){
-//   savedView.classList.remove('hidden')
-//   homeView.classList.add('hidden')
-//   hiddenForm.classList.add('hidden')
-//   homeButton.classList.remove('hidden')
-//   saveCoverButton.classList.add('hidden')
-//   randomCoverButton.classList.add('hidden')
-// })
-// >>>>>>> main
-
-//>>>>>>> main
-// Create your event handlers and other functions here 👇
-
-function getRandomIndex(arr) {
-  return arr[Math.floor(Math.random() * arr.length)]
 }
 
 function getRandomBook() {
@@ -107,7 +89,8 @@ function addSavedCover() {
 function viewHomeView() {
   hiddenForm.classList.add('hidden');
   homeView.classList.remove('hidden');
-  saveCoverButton.classList.remove('hidden');   randomCoverButton.classList.remove('hidden') ;
+  saveCoverButton.classList.remove('hidden'); 
+  randomCoverButton.classList.remove('hidden') ;
   homeButton.classList.add('hidden');
 }
 
@@ -115,7 +98,11 @@ function viewSavedCovers() {
   savedView.classList.remove('hidden') 
   homeView.classList.add('hidden') 
   hiddenForm.classList.add('hidden') 
-  homeButton.classList.remove('hidden')   saveCoverButton.classList.add('hidden')   randomCoverButton.classList.add('hidden') 
+  homeButton.classList.remove('hidden') 
+  saveCoverButton.classList.add('hidden') 
+  randomCoverButton.classList.add('hidden') 
+  setTimeout(function(){
+    alert('Double click a cover to delete it!'); }, 1000);
 }
 
 function viewUserCoverForm() {
@@ -142,4 +129,14 @@ function makesMiniCoverSection() {
     miniCover += newMiniCover;
     savedCoversLocation.innerHTML = miniCover;
   }
+}
+
+
+function deleteSaved(){
+  for (var i = 0; i < savedCovers.length; i++){
+    if (event.target.src === savedCovers[i].cover){
+      savedCovers.splice(i,1);
+      event.target.closest('mini-cover').remove();
+      }
+    }
 }
